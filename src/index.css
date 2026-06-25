@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0d0116; /* Deep synthwave purple */
+  background-image: 
+    linear-gradient(rgba(18, 1, 38, 0.9), rgba(13, 1, 22, 0.95)),
+    linear-gradient(to right, #22013a 1px, transparent 1px),
+    linear-gradient(to bottom, #22013a 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px; /* Cyber grid background */
+  color: #00ffff; /* Neon Cyan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* CRT Scanline effect simulation */
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background: rgba(20, 3, 33, 0.85);
+  padding: 40px;
+  border: 4px solid #ff007f; /* Hot Pink Border */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff007f, inset 0 0 15px rgba(255, 0, 127, 0.3);
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff007f, 0 0 20px #ff007f;
+  line-height: 1.5;
+}
+
+.status {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 12px;
+  background-color: #ff007f;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+}
+
+.square {
+  background-color: #140321;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square:hover {
+  background-color: #24073a;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Neon Cyan for X */
+.square.X {
+  color: #00ffff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Neon Yellow/Orange for O */
+.square.O {
+  color: #ffff00;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ffff00, 0 0 20px #ffff00;
+}
+
+.reset-btn {
+  font-family: 'Press Start 2P', cursive;
+  padding: 12px 24px;
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: #ff007f;
+  border: 3px solid #ff007f;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+}
+
+.reset-btn:hover {
+  background-color: #ff007f;
+  color: #fff;
+  box-shadow: 0 0 20px #ff007f;
+}
